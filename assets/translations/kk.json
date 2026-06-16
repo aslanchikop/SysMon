@@ -1,0 +1,88 @@
+{
+  "app_name": "Animora",
+  "login": "Кіру",
+  "phone_number": "Телефон нөмірі",
+  "enter_phone": "Телефон нөміріңізді енгізіңіз",
+  "role_selection": "Сіз кімсіз?",
+  "owner": "Мен үй жануарының иесімін",
+  "provider": "Мен қызмет көрсетемін",
+  "next": "Келесі",
+  "cancel": "Бас тарту",
+  "save": "Сақтау",
+  "add": "Қосу",
+  "edit": "Өңдеу",
+  "delete": "Жою",
+  "rating": "Рейтинг",
+  "reviews": "Пікірлер",
+  
+  "tabs": {
+    "home": "Басты бет",
+    "search": "Іздеу",
+    "pets": "Жануарлар",
+    "bookings": "Жазбалар",
+    "profile": "Профиль",
+    "dashboard": "Басқару",
+    "services": "Қызметтер",
+    "calendar": "Күнтізбе"
+  },
+  
+  "categories": {
+    "vet": "Ветклиника",
+    "grooming": "Груминг",
+    "hotel": "Зооқонақүй",
+    "walking": "Серуендету"
+  },
+  
+  "owner_home": {
+    "title": "Animora",
+    "subtitle": "Жануарыңызға қамқорлық",
+    "nearest_services": "Жақын маңдағы қызметтер",
+    "recommendations": "Ұсыныстар",
+    "view_all": "Барлығы"
+  },
+  
+  "pet": {
+    "my_pets": "Менің жануарларым",
+    "add_pet": "Жануарды қосу",
+    "name": "Аты",
+    "species": "Жануар түрі",
+    "breed": "Тұқымы",
+    "birth_date": "Туған күні",
+    "weight": "Салмағы (кг)",
+    "dog": "Ит",
+    "cat": "Мысық",
+    "other": "Басқа",
+    "no_pets": "Сізде әлі жануарлар жоқ. Біріншісін қосыңыз!",
+    "medical_card": "Мед. карта"
+  },
+  
+  "booking": {
+    "make_booking": "Қабылдауға жазылу",
+    "select_pet": "Жануарды таңдаңыз",
+    "select_service": "Қызметті таңдаңыз",
+    "select_date": "Күнді таңдаңыз",
+    "select_time": "Уақытты таңдаңыз",
+    "notes": "Ескертпелер / Тілектер",
+    "confirm_booking": "Жазылуды растау",
+    "success_title": "Жазылу сәтті жасалды!",
+    "success_body": "Провайдер жақын арада өтінішіңізді қарастырады.",
+    "status_pending": "Растау күтілуде",
+    "status_confirmed": "Расталды",
+    "status_completed": "Аяқталды",
+    "status_cancelled": "Бас тартылды",
+    "price_format": "{price} ₸",
+    "duration_format": "{duration} мин"
+  },
+  
+  "provider_dashboard": {
+    "welcome": "Басқару панелі",
+    "today_bookings": "Бүгінгі жазбалар",
+    "new_requests": "Жаңа өтініштер",
+    "no_bookings_today": "Бүгінге жазбалар жоқ",
+    "no_requests": "Жаңа өтініштер жоқ",
+    "accept": "Растау",
+    "decline": "Бас тарту",
+    "stats_revenue": "Табыс (апта)",
+    "stats_bookings": "Барлық жазбалар"
+  }
+}
