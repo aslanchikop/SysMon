@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../providers/data_providers.dart';
+import '../../../providers/auth_provider.dart';
 
 // Провайдер для получения ID заведения текущего авторизованного исполнителя
 final currentProviderIdProvider = FutureProvider<String?>((ref) async {

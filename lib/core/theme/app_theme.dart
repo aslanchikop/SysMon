@@ -26,7 +26,7 @@ class AppTheme {
         secondaryContainer: const Color(0xFFFFECEC),
       ),
       scaffoldBackgroundColor: const Color(0xFFF8F9FE),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: Colors.white,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -113,7 +113,7 @@ class AppTheme {
         secondaryContainer: Color(0xFF55323C),
       ),
       scaffoldBackgroundColor: const Color(0xFF1A1B2E),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: const Color(0xFF252642),
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -141,7 +141,7 @@ class AppTheme {
         bodyMedium: TextStyle(fontFamily: 'Inter', fontSize: 14, color: Color(0xFF88889C)),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButtonStyleFrom(
+        style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF8B85FF),
           foregroundColor: Colors.white,
           elevation: 0,

@@ -92,11 +92,11 @@ final userBookingsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) as
 });
 
 // 5. УПРАВЛЕНИЕ ЗАПИСЯМИ (Создание и обновление статуса)
-class BookingNotifier extends StateNotifier<AsyncValue<void>> {
-  final SupabaseClient _supabase;
-  final Ref _ref;
-
-  BookingNotifier(this._supabase, this._ref) : super(const AsyncValue.data(null));
+class BookingNotifier extends Notifier<AsyncValue<void>> {
+  @override
+  AsyncValue<void> build() {
+    return const AsyncValue.data(null);
+  }
 
   // Создать бронирование
   Future<void> createBooking({
@@ -107,12 +107,13 @@ class BookingNotifier extends StateNotifier<AsyncValue<void>> {
     required int price,
     String? notes,
   }) async {
-    final userId = _ref.read(authProvider).user?.id;
+    final userId = ref.read(authProvider).user?.id;
     if (userId == null) throw Exception('Пользователь не авторизован');
     
     state = const AsyncValue.loading();
     try {
-      await _supabase.from('bookings').insert({
+      final supabase = ref.read(supabaseClientProvider);
+      await supabase.from('bookings').insert({
         'owner_id': userId,
         'provider_id': providerId,
         'pet_id': petId,
@@ -124,7 +125,7 @@ class BookingNotifier extends StateNotifier<AsyncValue<void>> {
       });
       state = const AsyncValue.data(null);
       // Обновляем список записей
-      _ref.invalidate(userBookingsProvider);
+      ref.invalidate(userBookingsProvider);
     } catch (e, st) {
       state = AsyncValue.error(e, st);
       rethrow;
@@ -135,12 +136,13 @@ class BookingNotifier extends StateNotifier<AsyncValue<void>> {
   Future<void> updateBookingStatus(String bookingId, String newStatus) async {
     state = const AsyncValue.loading();
     try {
-      await _supabase
+      final supabase = ref.read(supabaseClientProvider);
+      await supabase
           .from('bookings')
           .update({'status': newStatus})
           .eq('id', bookingId);
       state = const AsyncValue.data(null);
-      _ref.invalidate(userBookingsProvider);
+      ref.invalidate(userBookingsProvider);
     } catch (e, st) {
       state = AsyncValue.error(e, st);
       rethrow;
@@ -148,17 +150,16 @@ class BookingNotifier extends StateNotifier<AsyncValue<void>> {
   }
 }
 
-final bookingNotifierProvider = StateNotifierProvider<BookingNotifier, AsyncValue<void>>((ref) {
-  final supabase = ref.watch(supabaseClientProvider);
-  return BookingNotifier(supabase, ref);
+final bookingNotifierProvider = NotifierProvider<BookingNotifier, AsyncValue<void>>(() {
+  return BookingNotifier();
 });
 
 // 6. ДОБАВЛЕНИЕ ПИТОМЦА
-class PetNotifier extends StateNotifier<AsyncValue<void>> {
-  final SupabaseClient _supabase;
-  final Ref _ref;
-
-  PetNotifier(this._supabase, this._ref) : super(const AsyncValue.data(null));
+class PetNotifier extends Notifier<AsyncValue<void>> {
+  @override
+  AsyncValue<void> build() {
+    return const AsyncValue.data(null);
+  }
 
   Future<void> addPet({
     required String name,
@@ -167,12 +168,13 @@ class PetNotifier extends StateNotifier<AsyncValue<void>> {
     DateTime? birthDate,
     double? weight,
   }) async {
-    final userId = _ref.read(authProvider).user?.id;
+    final userId = ref.read(authProvider).user?.id;
     if (userId == null) throw Exception('Пользователь не авторизован');
 
     state = const AsyncValue.loading();
     try {
-      await _supabase.from('pets').insert({
+      final supabase = ref.read(supabaseClientProvider);
+      await supabase.from('pets').insert({
         'owner_id': userId,
         'name': name,
         'species': species,
@@ -181,7 +183,7 @@ class PetNotifier extends StateNotifier<AsyncValue<void>> {
         'weight': weight,
       });
       state = const AsyncValue.data(null);
-      _ref.invalidate(userPetsProvider);
+      ref.invalidate(userPetsProvider);
     } catch (e, st) {
       state = AsyncValue.error(e, st);
       rethrow;
@@ -189,7 +191,6 @@ class PetNotifier extends StateNotifier<AsyncValue<void>> {
   }
 }
 
-final petNotifierProvider = StateNotifierProvider<PetNotifier, AsyncValue<void>>((ref) {
-  final supabase = ref.watch(supabaseClientProvider);
-  return PetNotifier(supabase, ref);
+final petNotifierProvider = NotifierProvider<PetNotifier, AsyncValue<void>>(() {
+  return PetNotifier();
 });

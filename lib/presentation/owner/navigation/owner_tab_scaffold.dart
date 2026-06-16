@@ -57,27 +57,27 @@ class OwnerTabScaffold extends StatelessWidget {
         destinations: [
           NavigationDestination(
             icon: const Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.home_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.home'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.search_outlined),
-            activeIcon: Icon(Icons.search_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.search_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.search'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.pets_outlined),
-            activeIcon: Icon(Icons.pets_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.pets_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.pets'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.calendar_month_outlined),
-            activeIcon: Icon(Icons.calendar_month_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.calendar_month_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.bookings'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.person_outline_rounded),
-            activeIcon: Icon(Icons.person_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.person_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.profile'),
           ),
         ],

@@ -109,7 +109,7 @@ class BookingListScreen extends ConsumerWidget {
                     children: [
                       // Верхняя строчка: Провайдер + Статус
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.between,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Expanded(
                             child: Text(
@@ -167,7 +167,7 @@ class BookingListScreen extends ConsumerWidget {
                       
                       // Время и Цена
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.between,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [

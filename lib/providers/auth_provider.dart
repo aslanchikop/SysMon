@@ -38,11 +38,13 @@ class AuthState {
 }
 
 // Нотификатор аутентификации
-class AuthNotifier extends StateNotifier<AuthState> {
+class AuthNotifier extends Notifier<AuthState> {
   final SupabaseClient _client = Supabase.instance.client;
 
-  AuthNotifier() : super(AuthState()) {
+  @override
+  AuthState build() {
     _init();
+    return AuthState();
   }
 
   Future<void> _init() async {
@@ -159,6 +161,6 @@ class AuthNotifier extends StateNotifier<AuthState> {
 }
 
 // Провайдер для использования в UI
-final authProvider = StateNotifierProvider<AuthNotifier, AuthState>((ref) {
+final authProvider = NotifierProvider<AuthNotifier, AuthState>(() {
   return AuthNotifier();
 });

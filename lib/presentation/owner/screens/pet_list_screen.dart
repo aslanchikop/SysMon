@@ -83,7 +83,7 @@ class PetListScreen extends ConsumerWidget {
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
-                          isDog ? Icons.dog_house_rounded : Icons.cat,
+                          isDog ? Icons.pets_rounded : Icons.pets_rounded,
                           size: 32,
                           color: theme.colorScheme.primary,
                         ),

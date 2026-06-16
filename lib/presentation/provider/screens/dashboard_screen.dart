@@ -162,7 +162,7 @@ class DashboardScreen extends ConsumerWidget {
       color: theme.colorScheme.primary.withOpacity(0.04),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: theme.colorScheme.primary.withOpacity(0.2), width: 1.5),
+        side: BorderSide(color: theme.colorScheme.primary.withOpacity(0.2), width: 1.5),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -170,7 +170,7 @@ class DashboardScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   client['full_name'] ?? 'Клиент',
@@ -245,7 +245,7 @@ class DashboardScreen extends ConsumerWidget {
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.between,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               '${pet['name']} • ${client['full_name'] ?? "Владелец"}',

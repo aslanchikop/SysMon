@@ -53,22 +53,22 @@ class ProviderTabScaffold extends StatelessWidget {
         destinations: [
           NavigationDestination(
             icon: const Icon(Icons.dashboard_outlined),
-            activeIcon: Icon(Icons.dashboard_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.dashboard_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.dashboard'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.calendar_today_outlined),
-            activeIcon: Icon(Icons.calendar_today_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.calendar_today_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.calendar'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.room_service_outlined),
-            activeIcon: Icon(Icons.room_service_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.room_service_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.services'),
           ),
           NavigationDestination(
             icon: const Icon(Icons.business_outlined),
-            activeIcon: Icon(Icons.business_rounded, color: theme.colorScheme.primary),
+            selectedIcon: Icon(Icons.business_rounded, color: theme.colorScheme.primary),
             label: tr('tabs.profile'),
           ),
         ],
