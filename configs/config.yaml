@@ -1,0 +1,27 @@
+# SysMon Alert Configuration
+
+rules:
+  # Trigger alert if CPU usage exceeds 80% for 5 seconds
+  - name: "High CPU Usage"
+    metric: "cpu"
+    operator: ">"
+    threshold: 80.0
+    duration: 5s
+    message: "CPU usage exceeded 80% for 5 seconds"
+
+  # Trigger alert if Memory usage exceeds 85% for 10 seconds
+  - name: "High Memory Usage"
+    metric: "memory"
+    operator: ">"
+    threshold: 85.0
+    duration: 10s
+    message: "RAM usage exceeded 85%"
+
+  # Trigger alert if Disk usage on root / exceeds 90%
+  - name: "High Disk Usage"
+    metric: "disk"
+    target: "/"
+    operator: ">="
+    threshold: 90.0
+    duration: 0s
+    message: "Root disk partition usage is above 90%"
